@@ -1,8 +1,7 @@
+import string
 from Socket import openSocket
 from Initialize import joinRoom
-from edmcoverlay import Overlay
-
-client = Overlay()
+from read import getUser, getMessage
 
 s = openSocket()
 joinRoom(s)
@@ -15,14 +14,5 @@ while True:
 
     for line in temp:
         print(line)
-		
-		
-def say_hello():
-    client.send_message(
-      msgid="hello-message",
-      text="Hello Commander!",
-      color="#ff0000",
-      size="normal",
-      x=200,
-      y=200,
-      ttl=10)
+f=open('chatlog.txt'), ('a+')
+f.write('(line)' + '\r\n')
